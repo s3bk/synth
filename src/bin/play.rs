@@ -11,28 +11,28 @@ fn main() {
         Profile::Simple { attack: 1.0, falloff: 1.0, colors: &[1.0, 0.8, 0.5, 0.2, 0.1]},
         
         // 1: clar1
-        Profile::Simple { attack: 20.0, falloff: 40.0, colors: &[0.6, 1.0, 0.8, 0.5, 0.2]},
+        Profile::Simple { attack: 5.0, falloff: 20.0, colors: &[0.6, 1.0, 0.8, 0.5, 0.2]},
 
         // 2: bass2
-        Profile::Simple { attack: 20.0, falloff: 20.0, colors: &[1.0, 0.6, 0.3, 0.6, 0.2]},
+        Profile::Simple { attack: 3.0, falloff: 20.0, colors: &[1.0, 0.8, 0.5, 0.3, 0.2]},
 
         // 3: syn
-        Profile::Simple { attack: 10., falloff: 40.0, colors: &[1.0, 0.8, 0.3, 0.6, 0.2]},
+        Profile::Simple { attack: 10., falloff: 4.0, colors: &[1.0, 0.8, 0.3, 0.6, 0.2]},
 
         // 4: piano
-        Profile::Simple { attack: 1.0, falloff: 40.0, colors: &[1.0, 0.7, 0.5, 0.4, 0.2]},
+        Profile::Simple { attack: 1.0, falloff: 50.0, colors: &[1.0, 0.7, 0.5, 0.4, 0.2]},
         
         // 5: clar1
-        Profile::Simple { attack: 10.0, falloff: 40.0, colors: &[0.6, 1.0, 0.8, 0.5, 0.2]},
+        Profile::Simple { attack: 5.0, falloff: 20.0, colors: &[0.6, 1.0, 0.8, 0.5, 0.2]},
 
         // 6: drum
-        Profile::Drum { falloff: 10.0, colors: &[1.0, 0.4, 0.8, 0.5, 0.2]},
+        Profile::Drum { falloff: 5.0, colors: &[2.0, 1.4, 0.8, 0.5, 0.2]},
 
         // 7: drum
-        Profile::Drum { falloff: 10.0, colors: &[2.0, 0.8, 0.5, 0.2]},
+        Profile::Drum { falloff: 10.0, colors: &[2.0, 0.8, 1.5, 0.2]},
 
         // 8: snare
-        Profile::Drum { falloff: 10.0, colors: &[0.6, 1.0, 0.8, 0.7, 0.5, 0.4, 0.2]},
+        Profile::Drum { falloff: 10.0, colors: &[0.6, 1.0, 0.8, 0.7, 0.5, 0.4, 0.2, 0.5, 0.3, 0.1]},
 
         // 9: hihat
         Profile::Drum { falloff: 3.0, colors: &[0.6, 0.4, 1.0, 0.5, 0.2]},

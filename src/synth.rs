@@ -137,6 +137,7 @@ struct SimpleVoice {
     amplitude: f32,
     target_amplitide: f32,
     samples_remaining: i64,
+    falloff_samples: i64,
     attack: f32,
     falloff: f32,
     colors: &'static [f32],
@@ -149,7 +150,8 @@ impl SimpleVoice {
             phase_step,
             amplitude: 0.0,
             target_amplitide: (100. * amplitude as f32 / freq as f32).min(0.5),
-            samples_remaining: ((duration + 3.0 * falloff as f64 / freq) / sample_duration) as i64,
+            samples_remaining: (duration / sample_duration) as i64,
+            falloff_samples: ((10.0 * falloff as f64 / freq) / sample_duration) as i64,
             falloff: (phase_step / falloff).min(1.0),
             attack: (phase_step / attack).min(1.0),
             colors,
@@ -180,7 +182,7 @@ impl SimpleVoice {
         ).sum::<f32>()* self.amplitude 
     }
     pub fn stopped(&self) -> bool {
-        self.samples_remaining <= 0
+        self.samples_remaining + self.falloff_samples <= 0
     }
 }
 struct DrumVoice {
@@ -199,7 +201,7 @@ impl DrumVoice {
             phase_step,
             amplitude: (100. * amplitude as f32 / freq as f32).min(0.5),
             falloff: (phase_step / falloff).min(1.0),
-            samples_remaining: ((falloff as f64 / freq * 5.0) / sample_duration) as i64,
+            samples_remaining: ((falloff as f64 / freq * 10.0) / sample_duration) as i64,
             colors,
         }
     }
